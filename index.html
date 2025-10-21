@@ -10,9 +10,9 @@
 
 </head>
 
-<body class="text-white bg-black max-w-6xl mx-auto">
+<body class="text-white   mx-auto">
     <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm">
-        <div class="max-w-6xl w-full mx-auto px-4">
+        <div class=" w-6xl mx-auto px-4">
             <nav class="flex items-center justify-between h-16">
                 <a href="index.html" class="text-lg font-semibold">Franco Beloqui</a>
 
@@ -25,81 +25,97 @@
     </header>
 
     <!-- Empujar contenido para que no quede debajo del header fijo -->
-    <main class="pt-16 ">
-        <section class="mt-12 text-lg lg:text-xl">
-            <h3 class="font-semibold text-gray-500">Franco Beloqui</h3>
-            <h1 class="text-3xl lg:text-4xl font-bold text-white">Web Developer</h1>
-            <p class="text-gray-400">Welcome to my portfolio! Here you can find my latest projects and contact
-                information.
-            </p>
+    <main class="pt-16  bg-black">
+        <section class="relative text-lg lg:text-xl">
+            <!-- Video background -->
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="./src/video/Comp 1_6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
 
-            <article class=" flex flex-col gap-2 text-md lg:text-lg">
-                <h2>Habilidades Tecnicas</h2>
-                <div class="flex gap-2">
-                    <h4>Languages:</h4>
-                    <ul class="flex flex-row gap-2 text-lg ">
-                        <li class="border rounded-2xl px-2">JavaScript</li>
-                        <li class="border rounded-2xl px-2">Python</li>
-                        <li class="border rounded-2xl px-2">PHP</li>
-                        <li class="border rounded-2xl px-2">NodeJS</li>
-                        <li class="border rounded-2xl px-2">HTML5</li>
-                        <li class="border rounded-2xl px-2">CSS3</li>
-                        <li class="border rounded-2xl px-2">SASS</li>
-                    </ul>
+            <!-- Content above video -->
+            <div class="relative z-10 flex flex-col gap-8 px-4 py-12 w-6xl mx-auto">
+                <div>
+                    <h3 class="font-semibold text-gray-400">Franco Beloqui</h3>
+                    <h1 class="text-3xl lg:text-6xl font-bold text-white">Web Developer</h1>
+                    <p class="text-gray-300">Welcome to my portfolio! Here you can find my latest projects and contact
+                        information.
+                    </p>
                 </div>
-                <div class="flex gap-2">
-                    <h4>Frameworks:</h4>
-                    <ul class="flex flex-row gap-2">
-                        <li class="border rounded-2xl px-2">React</li>
-                        <li class="border rounded-2xl px-2">TailwindCSS</li>
-                        <li class="border rounded-2xl px-2">Bootstrap</li>
-                        <li class="border rounded-2xl px-2">WordPress</li>
-                    </ul>
-                </div>
-                <div class="flex gap-2">
-                    <h4>Databases:</h4>
-                    <ul class="flex flex-row gap-2">
-                        <li class="border rounded-2xl px-2">MySQL</li>
-                        <li class="border rounded-2xl px-2">SQLlite</li>
-                    </ul>
-                </div>
-                <div class="flex gap-2">
-                    <h4>Version Control:</h4>
-                    <ul class="flex flex-row gap-2">
-                        <li class="border rounded-2xl px-2">GitHub</li>
-                    </ul>
-                </div>
-            </article>
+                <article class=" flex flex-col gap-2 text-sm lg:text-md">
+                    <h2 class="text-xl">Habilidades Tecnicas :</h2>
+                    <div class="flex gap-2">
+                        <h4>Languages:</h4>
+                        <ul class="flex flex-row gap-2 ">
+                            <li class="border rounded-2xl px-2">JavaScript</li>
+                            <li class="border rounded-2xl px-2">Python</li>
+                            <li class="border rounded-2xl px-2">PHP</li>
+                            <li class="border rounded-2xl px-2">NodeJS</li>
+                            <li class="border rounded-2xl px-2">HTML5</li>
+                            <li class="border rounded-2xl px-2">CSS3</li>
+                            <li class="border rounded-2xl px-2">SASS</li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-2">
+                        <h4>Frameworks:</h4>
+                        <ul class="flex flex-row gap-2">
+                            <li class="border rounded-2xl px-2">React</li>
+                            <li class="border rounded-2xl px-2">TailwindCSS</li>
+                            <li class="border rounded-2xl px-2">Bootstrap</li>
+                            <li class="border rounded-2xl px-2">WordPress</li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-2">
+                        <h4>Databases:</h4>
+                        <ul class="flex flex-row gap-2">
+                            <li class="border rounded-2xl px-2">MySQL</li>
+                            <li class="border rounded-2xl px-2">SQLlite</li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-2">
+                        <h4>Version Control:</h4>
+                        <ul class="flex flex-row gap-2">
+                            <li class="border rounded-2xl px-2">GitHub</li>
+                        </ul>
+                    </div>
+                </article>
         </section>
-        <main>
+        <main class="px-4 py-12 w-6xl mx-auto grid lg:grid-cols-2">
             <section>
-                <h1>Proyectos</h1>
-                <p>Aquí puedes encontrar algunos de mis proyectos más recientes.</p>
+                <h1 class="text-2xl lg:text-4xl font-bold">Proyectos</h1>
+                <p class="text-gray-500">Aquí puedes encontrar algunos de mis proyectos más recientes.</p>
             </section>
             <section>
                 <h2>Proyecto 1</h2>
                 <p>Descripción del proyecto 1.</p>
                 <a href="proyecto1.html">Ver más</a>
-
             </section>
         </main>
-        <section>
-            <div>
-                <h1>Contacto</h1>
-                <p>Si deseas ponerte en contacto conmigo, no dudes en enviarme un mensaje.</p>
+        <section class="bg-white px-auto ">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2">
+                <div>
+                    <h1 class="text-black text-2xl lg:text-4xl font-bold">Contacto</h1>
+                    <p class="text-gray-500">Si deseas ponerte en contacto conmigo, no dudes en enviarme un mensaje.</p>
+                </div>
+                <form action="" class="w-full text-black flex flex-col gap-4">
+                    <div class="">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
-            <form action="">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
         </section>
         <footer>
             <p>Contacto: francobeloqui9@gmail.com</p>
