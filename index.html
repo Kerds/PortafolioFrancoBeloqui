@@ -10,15 +10,32 @@
 
 </head>
 
-<body class="text-white   mx-auto">
-    <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm">
-        <div class=" w-7xl mx-auto px-4">
+<body class="text-white mx-auto">
+    <header class="lg:fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm">
+        <div class=" lg:w-7xl mx-auto px-4">
             <nav class="flex items-center justify-between h-16">
                 <a href="index.html" class="text-lg font-semibold">Franco Beloqui</a>
 
-                <div class="flex items-center gap-4">
+                <!-- Desktop links -->
+                <div class="hidden md:flex items-center gap-4">
                     <a href="contacto.html" class="px-4 py-2 border border-gray-300 rounded">Contacto <i
                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                <!-- Mobile hamburger -->
+                <div class="md:hidden">
+                    <button id="nav-toggle" aria-label="Open menu" class="p-2 rounded-md border border-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu (hidden by default) -->
+                <div id="mobile-menu" class="hidden absolute top-16 right-4 bg-black/95 rounded-md shadow-lg py-2 w-40">
+                    <a href="contacto.html" class="block px-4 py-2 text-sm border-b border-gray-700">Contacto</a>
                 </div>
             </nav>
         </div>
@@ -36,7 +53,7 @@
             <div class="absolute inset-0 bg-black/40"></div>
 
             <!-- Content above video -->
-            <div class="relative z-10 flex flex-col gap-8 px-4 py-12 w-7xl mx-auto">
+            <div class="relative z-10 flex flex-col gap-8 px-4 py-12 lg:w-7xl mx-auto">
                 <div>
                     <h3 class="font-semibold text-gray-400">Franco Beloqui</h3>
                     <h1 class="text-3xl lg:text-6xl font-bold text-white">Web Developer</h1>
@@ -82,7 +99,7 @@
                     </div>
                 </article>
         </section>
-        <main class="w-7xl mx-auto grid lg:grid-cols-2 h-160 py-12 lg:py-20">
+        <main class="lg:lg:w-7xl mx-auto grid lg:grid-cols-2 h-160 py-12 lg:py-20">
             <section>
                 <h1 class="text-2xl lg:text-4xl font-bold">Proyectos</h1>
                 <p class="text-gray-500">Aquí puedes encontrar algunos de mis proyectos más recientes.</p>
@@ -109,7 +126,7 @@
             </section>
         </main>
         <section class="bg-white h-120 flex items-center justify-center">
-            <div class="max-w-7xl w-full px-4 grid lg:grid-cols-2 gap-14">
+            <div class="max-lg:w-7xl w-full px-4 grid lg:grid-cols-2 gap-14">
                 <div>
                     <h1 class="text-black text-2xl lg:text-4xl font-bold">Contacto</h1>
                     <p class="text-gray-500">Si deseas ponerte en contacto conmigo, no dudes en enviarme un mensaje.</p>
@@ -133,6 +150,24 @@
         </footer>
 
     </main>
+    <script>
+        // Mobile menu toggle
+        (function () {
+            const btn = document.getElementById('nav-toggle');
+            const menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            });
+            // Close when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!menu.classList.contains('hidden')) {
+                    if (!menu.contains(e.target) && e.target !== btn) menu.classList.add('hidden');
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
